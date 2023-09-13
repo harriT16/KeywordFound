@@ -11,7 +11,7 @@ def search_keyword_on_website():
     try:
         response = requests.get(url)
         if response.status_code != 200:
-            output_text.insert(tk.END, f"Failed to get URL. Status code: {response.status_code}\n")
+            output_text.insert(tk.END, f"Failed to get URL. Exit: {response.status_code}\n")
             return
         
         soup = BeautifulSoup(response.content, 'html.parser')
